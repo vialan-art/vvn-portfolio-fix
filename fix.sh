@@ -30,7 +30,7 @@ rm -f /etc/nginx/sites-enabled/default
 ln -sf /etc/nginx/sites-available/vvn-portfolio /etc/nginx/sites-enabled/vvn-portfolio
 nginx -t && systemctl reload nginx
 
-certbot certonly --standalone --non-interactive --agree-tos --email vialan.hzh@gmail.com -d louvre.vvnalnlgs.top
+certbot --nginx --non-interactive --agree-tos --email vialan.hzh@gmail.com -d louvre.vvnalnlgs.top --redirect
 
 cat > /etc/nginx/sites-available/vvn-portfolio <<'NGINX_EOF'
 server {
